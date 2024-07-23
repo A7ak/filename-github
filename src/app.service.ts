@@ -12,7 +12,7 @@ export class AppService {
 
   constructor(private readonly httpService: HttpService) {}
 
-  getGithubRepo() : Observable<any>  {
+  getGithubRepo() : Observable<string>  {
 
     const url = 'https://api.github.com/repos/A7ak/filename-github/contents/src/app.service.ts';
     const token = `token`
@@ -22,7 +22,14 @@ export class AppService {
     };
     console.log("data")
     return this.httpService.get(url,{ headers}).pipe(
-      map((response: AxiosResponse) => response.data),
+      map((response: AxiosResponse) => {
+       const data = response.data.split('\n')
+       for(let i = 0 ; i < data.length ; i++) {
+        if(data[i].includes('console.log')) {
+          return data[i]
+        }
+       }
+      }),
     );
   }
 

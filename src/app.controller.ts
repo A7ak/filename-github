@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getGithubRepo() : Observable<any> {
+  getGithubRepo() : Observable<string> {
     return this.appService.getGithubRepo();
   }
 }
