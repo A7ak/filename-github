@@ -1,11 +1,10 @@
 
-case1.setText("api.response.key1");
+textView1.setText("api.response.key1");
 
-case2.setText(
+textView2.setText(
     api.response.key2);
 
-case3.text = api.response.key3   
+textView3.text = api.response.key3   
 
-case4.text = 
+textView4.text = 
  api.response.key4
-
