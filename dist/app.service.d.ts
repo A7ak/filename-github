@@ -3,6 +3,6 @@ import { Observable } from 'rxjs';
 export declare class AppService {
     private readonly httpService;
     constructor(httpService: HttpService);
-    getGithubRepo(): Observable<any>;
+    getGithubRepo(): Observable<string>;
     getHello(): string;
 }

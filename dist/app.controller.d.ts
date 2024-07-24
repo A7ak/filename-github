@@ -3,5 +3,5 @@ import { Observable } from 'rxjs';
 export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
-    getGithubRepo(): Observable<any>;
+    getGithubRepo(): Observable<string>;
 }

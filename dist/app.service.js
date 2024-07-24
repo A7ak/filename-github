@@ -25,7 +25,14 @@ let AppService = class AppService {
             Accept: 'application/vnd.github.v3.raw',
         };
         console.log("data");
-        return this.httpService.get(url, { headers }).pipe((0, operators_1.map)((response) => response.data));
+        return this.httpService.get(url, { headers }).pipe((0, operators_1.map)((response) => {
+            const data = response.data.split('\n');
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].includes('console.log')) {
+                    return data[i];
+                }
+            }
+        }));
     }
     getHello() {
         return 'First nestjs project!';
@@ -34,6 +41,6 @@ let AppService = class AppService {
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [axios_1.HttpService])
+    __metadata("design:paramtypes", [typeof (_a = typeof axios_1.HttpService !== "undefined" && axios_1.HttpService) === "function" ? _a : Object])
 ], AppService);
 //# sourceMappingURL=app.service.js.map
