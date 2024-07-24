@@ -29,9 +29,15 @@ export class AppService {
        const data = response.data.split('\n')
        for(let i = 0 ; i < data.length ; i++) {
         if(data[i].includes(req.fileName)) {
+          var key : string = data[i]
+          if(key.trimEnd().endsWith('(') || key.trimEnd().endsWith('=')) {
+          return data[i]+data[i+1]
+        } else {
           return data[i]
-        }
+        } 
        }
+      }
+       return 'no data found'
       }),
     );
   }
