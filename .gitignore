@@ -1,1 +1,13 @@
 node_modules
+dist/app.controller.d.ts
+dist/app.controller.js
+dist/app.controller.js.map
+dist/app.service.d.ts
+dist/app.service.js
+dist/app.service.js.map
+dist/req/api.key.req.d.ts
+dist/req/api.key.req.js
+dist/req/api.key.req.js.map
+dist/tsconfig.build.tsbuildinfo
+dist/app.controller.d.ts
+/dist
